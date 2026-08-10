@@ -1,3 +1,3 @@
 Portfolio site template
 
-Generated with Claude Code
+Coplied from INSY-660

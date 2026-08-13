@@ -1,0 +1,69 @@
+{
+  "settings": {
+    "scrollRunway": 0.85,
+    "footerHint": "Scroll — the page rolls"
+  },
+  "brand": {
+    "initials": "EM",
+    "name": "Elena Marchetti"
+  },
+  "hero": {
+    "kicker": "MSc MANAGEMENT ANALYTICS · CLASS OF 2026",
+    "title": ["I turn messy data", "into <em>confident</em>", "decisions."],
+    "lede": "I'm <strong>Elena Marchetti</strong> — a master's student specialising in predictive modelling, people analytics and decision science, currently writing my thesis on early attrition signals.",
+    "ctaPrimary": { "label": "Selected work", "goTo": "Work" },
+    "ctaSecondary": { "label": "Get in touch →", "goTo": "Contact" },
+    "stats": [
+      { "value": "3.9", "label": "cumulative GPA" },
+      { "value": "12", "label": "dashboards shipped" },
+      { "value": "04", "label": "analytics internships" }
+    ],
+    "photo": {
+      "src": "https://picsum.photos/seed/management-analytics-portrait/720/900",
+      "alt": "Portrait of Elena Marchetti",
+      "captionLeft": "Fig. 01 — Elena Marchetti",
+      "captionRight": "Rotterdam, NL"
+    },
+    "marquee": ["People Analytics", "Predictive Modelling", "SQL · Python", "Tableau & Power BI", "Decision Science", "A/B Testing", "Forecasting", "Storytelling with Data"]
+  },
+  "work": {
+    "heading": "Selected <em>work</em>",
+    "note": "Three studies · one question each — how does data change the decision? · 2025—26",
+    "projects": [
+      {
+        "title": "Churn Radar",
+        "desc": "Retention forecasting for a subscription retailer — flagging 68% of cancellations a month in advance.",
+        "tags": ["Python", "XGBoost", "Tableau"],
+        "img": "https://picsum.photos/seed/churn-forecast-dashboard/800/500",
+        "alt": "Churn Radar dashboard preview"
+      },
+      {
+        "title": "Workforce Pulse",
+        "desc": "People-analytics suite linking engagement surveys to attrition across 2,400 employees.",
+        "tags": ["Power BI", "SQL", "Survey design"],
+        "img": "https://picsum.photos/seed/people-analytics-suite/800/500",
+        "alt": "Workforce Pulse dashboard preview"
+      },
+      {
+        "title": "Price Sense",
+        "desc": "Price-elasticity study that reshaped a two-tier pricing launch before it shipped.",
+        "tags": ["R", "Regression", "A/B testing"],
+        "img": "https://picsum.photos/seed/pricing-elasticity-study/800/500",
+        "alt": "Price Sense study preview"
+      }
+    ]
+  },
+  "contact": {
+    "kicker": "OPEN TO ANALYTICS INTERNSHIPS · SUMMER 2026",
+    "title": ["Let's talk", "<em>data.</em>"],
+    "email": "hello@elenamarchetti.example",
+    "cvLabel": "Download CV",
+    "cvHref": "#",
+    "socials": [
+      { "label": "LinkedIn", "href": "#" },
+      { "label": "GitHub", "href": "#" },
+      { "label": "Kaggle", "href": "#" }
+    ],
+    "footnote": "© 2026 Elena Marchetti — cream & #AB3B3A"
+  }
+}

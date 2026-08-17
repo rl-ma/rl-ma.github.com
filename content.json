@@ -4,13 +4,13 @@
     "footerHint": "Scroll — the page rolls"
   },
   "brand": {
-    "initials": "EM",
-    "name": "Elena Marchetti"
+    "initials": "RM",
+    "name": "Ruilei Ma"
   },
   "hero": {
     "kicker": "MSc MANAGEMENT ANALYTICS · CLASS OF 2026",
     "title": ["I turn messy data", "into <em>confident</em>", "decisions."],
-    "lede": "I'm <strong>Elena Marchetti</strong> — a master's student specialising in predictive modelling, people analytics and decision science, currently writing my thesis on early attrition signals.",
+    "lede": "I'm <strong>Ruilei Ma</strong> — a master's student specialising in predictive modelling, people analytics and decision science, currently writing my thesis on early attrition signals.",
     "ctaPrimary": { "label": "Selected work", "goTo": "Work" },
     "ctaSecondary": { "label": "Get in touch →", "goTo": "Contact" },
     "stats": [

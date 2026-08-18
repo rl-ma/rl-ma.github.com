@@ -474,7 +474,7 @@ function renderSite(){
   $("#cTitle").innerHTML = linesHTML(c.title);
   const em = $("#cEmail"); em.href = "mailto:" + c.email; em.textContent = c.email;
   $("#cCvLabel").textContent = c.cvLabel; $("#cCv").dataset.href = c.cvHref;
-  $("#cSocial").innerHTML = c.socials.map(s => `<a href="${esc(s.href)}" data-hover>${esc(s.label)} ↗</a>`).join("");
+  $("#cSocial").innerHTML = c.socials.map(s => `<a href="${esc(s.href)}" target="_blank" rel="noopener noreferrer" data-hover>${esc(s.label)} ↗</a>`).join("");
   $("#cFoot").textContent = c.footnote;
 }
 

@@ -56,12 +56,12 @@
   "contact": {
     "kicker": "OPEN TO ANALYTICS INTERNSHIPS · SUMMER 2026",
     "title": ["Let's talk", "<em>data.</em>"],
-    "email": "hello@ruileima.example",
+    "email": "ruilei.ma@mail.mcgill.ca",
     "cvLabel": "Download CV",
     "cvHref": "#",
     "socials": [
-      { "label": "LinkedIn", "href": "#" },
-      { "label": "GitHub", "href": "#" },
+      { "label": "LinkedIn", "href": "https://www.linkedin.com/in/ruileima/" },
+      { "label": "GitHub", "href": "https://github.com/rl-ma" },
       { "label": "Kaggle", "href": "#" }
     ],
     "footnote": "© 2026 Ruilei Ma — cream & #AB3B3A"

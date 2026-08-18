@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="900" viewBox="0 0 720 900" role="img" aria-label="Portrait placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FBF7EC"/>
+      <stop offset="1" stop-color="#EFE4CC"/>
+    </linearGradient>
+    <linearGradient id="stripe" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#AB3B3A"/>
+      <stop offset="1" stop-color="#8C2F2E"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="900" fill="url(#bg)"/>
+  <!-- decorative frame corner marks -->
+  <g stroke="#AB3B3A" stroke-width="3" fill="none">
+    <path d="M60 60 H24 V24 H60 Z"/>
+    <path d="M660 840 H696 V876 H660 Z"/>
+  </g>
+  <g transform="translate(360 470)">
+    <circle r="150" fill="none" stroke="#AB3B3A" stroke-width="2" opacity="0.25"/>
+    <circle r="112" fill="none" stroke="#AB3B3A" stroke-width="2" opacity="0.4"/>
+    <circle r="74" fill="url(#stripe)"/>
+    <text x="0" y="30" text-anchor="middle" font-family="Georgia, serif" font-size="96" font-weight="600" fill="#F6F0E2">RM</text>
+  </g>
+  <text x="360" y="640" text-anchor="middle" font-family="Georgia, serif" font-size="34" font-weight="500" fill="#241D14">Portrait placeholder</text>
+  <text x="360" y="678" text-anchor="middle" font-family="Courier New, monospace" font-size="18" letter-spacing="3" fill="#6B6154">RUJIA · REPLACE ME</text>
+  <text x="360" y="820" text-anchor="middle" font-family="Courier New, monospace" font-size="16" letter-spacing="2" fill="#AB3B3A">FIG. 01</text>
+</svg>

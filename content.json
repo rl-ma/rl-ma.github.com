@@ -19,7 +19,7 @@
       { "value": "04", "label": "analytics internships" }
     ],
     "photo": {
-      "src": "https://picsum.photos/seed/management-analytics-portrait/720/900",
+      "src": "img/placeholder-hero.svg",
       "alt": "Portrait of Ruilei Ma",
       "captionLeft": "Fig. 01 — Ruilei Ma",
       "captionRight": "Montréal, QC"
@@ -34,21 +34,21 @@
         "title": "Churn Radar",
         "desc": "Retention forecasting for a subscription retailer — flagging 68% of cancellations a month in advance.",
         "tags": ["Python", "XGBoost", "Tableau"],
-        "img": "https://picsum.photos/seed/churn-forecast-dashboard/800/500",
+        "img": "img/placeholder-work.svg",
         "alt": "Churn Radar dashboard preview"
       },
       {
         "title": "Workforce Pulse",
         "desc": "People-analytics suite linking engagement surveys to attrition across 2,400 employees.",
         "tags": ["Power BI", "SQL", "Survey design"],
-        "img": "https://picsum.photos/seed/people-analytics-suite/800/500",
+        "img": "img/placeholder-work-2.svg",
         "alt": "Workforce Pulse dashboard preview"
       },
       {
         "title": "Price Sense",
         "desc": "Price-elasticity study that reshaped a two-tier pricing launch before it shipped.",
         "tags": ["R", "Regression", "A/B testing"],
-        "img": "https://picsum.photos/seed/pricing-elasticity-study/800/500",
+        "img": "img/placeholder-work-3.svg",
         "alt": "Price Sense study preview"
       }
     ]

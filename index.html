@@ -3,8 +3,16 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Elena Marchetti — MSc Management Analytics · Portfolio</title>
-<meta name="description" content="Portfolio of Elena Marchetti, master's student in Management Analytics."/>
+<meta http-equiv="Content-Security-Policy"
+  content="default-src 'self';
+           img-src 'self' https://picsum.photos data:;
+           style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+           font-src https://fonts.gstatic.com;
+           script-src 'self' 'unsafe-inline';
+           connect-src 'self';
+           frame-ancestors 'none';">
+<title>Ruilei Ma — MSc Management Analytics · Portfolio</title>
+<meta name="description" content="Portfolio of Ruilei Ma, master's student in Management Analytics."/>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -402,7 +410,18 @@ async function boot(){
 /* ═══ PART 2 · RENDER — builds the DOM from CONTENT (no need to edit) ═══ */
 const $  = s => document.querySelector(s);
 const pad = n => String(n).padStart(2, "0");
-const linesHTML = arr => arr.map((l, i) => `<span class="line" style="--i:${i}"><span>${l}</span></span>`).join("");
+
+/* Escape HTML special characters — safe for text & attribute values. */
+const esc = s => String(s)
+  .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+  .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+
+/* Sanitize a string that may intentionally contain a tiny allowlist of
+   inline tags (<em>, <strong>, <b>, <i>). Everything else is escaped. */
+const sanitize = s => esc(s)
+  .replace(/&lt;(\/?(?:em|strong|b|i))&gt;/g, "<$1>");
+
+const linesHTML = arr => arr.map((l, i) => `<span class="line" style="--i:${i}"><span>${sanitize(l)}</span></span>`).join("");
 
 function renderSite(){
   const panels = Array.from(document.querySelectorAll(".panel"));
@@ -423,29 +442,29 @@ function renderSite(){
   const h = CONTENT.hero;
   const hk = $("#heroKicker"); hk.dataset.scramble = ""; hk.dataset.text = h.kicker; hk.textContent = h.kicker;
   $("#heroTitle").innerHTML = linesHTML(h.title);
-  $("#heroLede").innerHTML  = h.lede;
+  $("#heroLede").innerHTML  = sanitize(h.lede);
   $("#heroCta").innerHTML =
-    `<button class="btn" data-goto="${h.ctaPrimary.goTo}"><span>${h.ctaPrimary.label}</span><span class="arr">↓</span></button>
-     <button class="lnk" data-goto="${h.ctaSecondary.goTo}">${h.ctaSecondary.label}</button>`;
-  $("#heroStats").innerHTML = h.stats.map(s => `<li><strong>${s.value}</strong><span>${s.label}</span></li>`).join("");
-  const img = $("#heroImg"); img.src = h.photo.src; img.alt = h.photo.alt;
+    `<button class="btn" data-goto="${esc(h.ctaPrimary.goTo)}"><span>${esc(h.ctaPrimary.label)}</span><span class="arr">↓</span></button>
+     <button class="lnk" data-goto="${esc(h.ctaSecondary.goTo)}">${esc(h.ctaSecondary.label)}</button>`;
+  $("#heroStats").innerHTML = h.stats.map(s => `<li><strong>${esc(s.value)}</strong><span>${esc(s.label)}</span></li>`).join("");
+  const img = $("#heroImg"); img.src = h.photo.src; img.alt = h.photo.alt; img.referrerPolicy = "no-referrer";
   $("#heroCapL").textContent = h.photo.captionLeft;
   $("#heroCapR").textContent = h.photo.captionRight;
-  const group = `<div class="mq-group">${h.marquee.map(t => `<span>${t}<i>✦</i></span>`).join("")}</div>`;
+  const group = `<div class="mq-group">${h.marquee.map(t => `<span>${esc(t)}<i>✦</i></span>`).join("")}</div>`;
   $("#marqueeTrack").innerHTML = group + group;
 
   /* work */
   const w = CONTENT.work;
   $("#workIdx").textContent  = pad(panels.findIndex(p => p.dataset.name === "Work") + 1);
-  $("#workTitle").innerHTML  = w.heading;
+  $("#workTitle").innerHTML  = sanitize(w.heading);
   $("#workNote").textContent = w.note;
   $("#workGrid").innerHTML = w.projects.map((p, i) => `
     <article class="project" data-hover data-reveal style="--d:${160 + i * 100}ms">
-      <div class="p-media"><img src="${p.img}" alt="${p.alt}"/><span class="p-tint"></span></div>
+      <div class="p-media"><img src="${esc(p.img)}" alt="${esc(p.alt)}" referrerpolicy="no-referrer"/><span class="p-tint"></span></div>
       <div class="p-body">
-        <div class="p-row"><span class="p-num">${pad(i+1)}</span><h3>${p.title}</h3><span class="p-arrow">↗</span></div>
-        <p class="p-desc">${p.desc}</p>
-        <ul class="p-tags">${p.tags.map(t => `<li>${t}</li>`).join("")}</ul>
+        <div class="p-row"><span class="p-num">${pad(i+1)}</span><h3>${esc(p.title)}</h3><span class="p-arrow">↗</span></div>
+        <p class="p-desc">${esc(p.desc)}</p>
+        <ul class="p-tags">${p.tags.map(t => `<li>${esc(t)}</li>`).join("")}</ul>
       </div>
     </article>`).join("");
 
@@ -455,7 +474,7 @@ function renderSite(){
   $("#cTitle").innerHTML = linesHTML(c.title);
   const em = $("#cEmail"); em.href = "mailto:" + c.email; em.textContent = c.email;
   $("#cCvLabel").textContent = c.cvLabel; $("#cCv").dataset.href = c.cvHref;
-  $("#cSocial").innerHTML = c.socials.map(s => `<a href="${s.href}" data-hover>${s.label} ↗</a>`).join("");
+  $("#cSocial").innerHTML = c.socials.map(s => `<a href="${esc(s.href)}" data-hover>${esc(s.label)} ↗</a>`).join("");
   $("#cFoot").textContent = c.footnote;
 }
 
